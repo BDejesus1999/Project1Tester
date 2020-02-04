@@ -10,3 +10,7 @@ $("#text").on("click", function (event) {
         success: function (json) {
 
             console.log(json);
+        }
+    });
+
+});
