@@ -9,25 +9,47 @@
 
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <script scr="Project 1 examples.js"></script>
-
 </head>
 
 <body>
-    <div id="root">
-        <button id="text" type="button">Test</button>
-        <button type=""></button>
+    <div class="contrainer">
+        <div>
+
+        </div>
+
+
     </div>
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
-        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-
-    <script scr="Project 1 examples.js"></script>
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
+        integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
+        crossorigin="anonymous"></script>
     <script>
+        $(document).ready(function () {
+            $("p").click(function () {
+                $(this).hide();
+            });
+        });
+
+        var apikey = "QifHTCzvGSMfbaKm1TL6YGiFOvY3s2W9"
+        var queryURL = "https://app.ticketmaster.com/discovery/v2/events.json?size=5&countryCode=US&apikey=" + apikey;
+
+        $.ajax({
+            type: "GET",
+            url: queryURL,
+            async: true,
+            dataType: "json",
+            success: function (json) {
+                console.log(json);
+                // Parse the response.
+                // Do other things.
+            },
+            error: function (xhr, status, err) {
+                // This time, we do not end up here!
+            }
+        });
 
 
     </script>
-
 </body>
 
 </html>
