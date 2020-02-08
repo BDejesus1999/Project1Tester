@@ -2,13 +2,14 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Project 1</title>
-
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+    <title>Project 1</title>
+
 </head>
 
 <body>
@@ -169,49 +170,24 @@
     </div>
     </div>
 
-    </div>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
-        integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
-        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('select').formSelect();
+        });
+    </script>
+    <script src="https://kit.fontawesome.com/4f2122606e.js" crossorigin="anonymous"></script>
     <script>
         $(document).ready(function () {
             $("p").click(function () {
                 $(this).hide();
             });
         });
-
-        var apikey = "QifHTCzvGSMfbaKm1TL6YGiFOvY3s2W9";
-
-        $("#search-btn").on("click", function () {
-            $("#tk-content").empty();
-            var stateCode = $("#eventState").val().trim();
-            var artistName = $("#artist_name").val().trim();
-            var queryURL = "https://app.ticketmaster.com/discovery/v2/events.json?size=5&keywork" + artistName + "&stateCode=" + stateCode + "&apikey=" + apikey;
-
-            $.ajax({
-                type: "GET",
-                url: queryURL,
-                async: true,
-                dataType: "json",
-                success: function (json) {
-                    console.log(json);
-                    // Parse the response.
-                    // Do other things.
-                },
-                error: function (xhr, status, err) {
-                    // This time, we do not end up here!
-                }
-
-
-            })
-
-            $("tk-content").append
-
-        })
-
-
     </script>
+    <script src="Project.js"></script>
 </body>
 
 </html>
